@@ -1,0 +1,2 @@
+iverilog -o Single_Cycle_CPU TestBench.v ALU.v Shifter.v ALU_1bit.v Full_adder.v Adder.v Simple_Single_CPU.v ALU_Ctrl.v Decoder.v Instr_Memory.v Mux2to1.v Mux3to1.v Program_Counter.v Reg_File.v Sign_Extend.v Zero_Filled.v
+vvp -n Single_Cycle_CPU
