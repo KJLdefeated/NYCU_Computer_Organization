@@ -26,10 +26,7 @@ integer     count;
 integer     handle;
 integer     end_count;
 //Greate tested modle  
-Simple_Single_CPU cpu(
-        .clk_i(CLK),
-		.rst_n(RST)
-		);
+Simple_Single_CPU cpu(.clk_i(CLK),.rst_n(RST));
 
 //PARAMETER
 //OP code definition
@@ -564,14 +561,7 @@ initial begin
 	
 			$fdisplay(handle,"Register======================================================");
 			$fdisplay(handle, 
-"r0=%d, r1=%d, r2=%d, r3=%d,\n\
-r4=%d, r5=%d, r6=%d, r7=%d,\n\
-r8=%d, r9=%d, r10=%d, r11=%d,\n\
-r12=%d, r13=%d, r14=%d, r15=%d,\n\
-r16=%d, r17=%d, r18=%d, r19=%d,\n\
-r20=%d, r21=%d, r22=%d, r23=%d,\n\
-r24=%d, r25=%d, r26=%d, r27=%d,\n\
-r28=%d, r29=%d, r30=%d, r31=%d,\n",
+"r0=%d, r1=%d, r2=%d, r3=%d,\n\r4=%d, r5=%d, r6=%d, r7=%d,\n\r8=%d, r9=%d, r10=%d, r11=%d,\n\r12=%d, r13=%d, r14=%d, r15=%d,\n\r16=%d, r17=%d, r18=%d, r19=%d,\n\r20=%d, r21=%d, r22=%d, r23=%d,\n\r24=%d, r25=%d, r26=%d, r27=%d,\n\r28=%d, r29=%d, r30=%d, r31=%d,\n",
 	          cpu.RF.Reg_File[0], cpu.RF.Reg_File[1], cpu.RF.Reg_File[2], cpu.RF.Reg_File[3], cpu.RF.Reg_File[4], 
 			  cpu.RF.Reg_File[5], cpu.RF.Reg_File[6], cpu.RF.Reg_File[7], cpu.RF.Reg_File[8], cpu.RF.Reg_File[9], 
 			  cpu.RF.Reg_File[10],cpu.RF.Reg_File[11], cpu.RF.Reg_File[12], cpu.RF.Reg_File[13], cpu.RF.Reg_File[14],
@@ -581,14 +571,7 @@ r28=%d, r29=%d, r30=%d, r31=%d,\n",
 			  cpu.RF.Reg_File[30],cpu.RF.Reg_File[31]);
 			$fdisplay(handle,"Memory========================================================");
 			$fdisplay(handle, 
-"m0=%d, m1=%d, m2=%d, m3=%d,\n\
-m4=%d, m5=%d, m6=%d, m7=%d,\n\
-m8=%d, m9=%d, m10=%d, m11=%d,\n\
-m12=%d, m13=%d, m14=%d, m15=%d,\n\
-m16=%d, m17=%d, m18=%d, m19=%d,\n\
-m20=%d, m21=%d, m22=%d, m23=%d,\n\
-m24=%d, m25=%d, m26=%d, m27=%d,\n\
-m28=%d, m29=%d, m30=%d, m31=%d,\n",
+"m0=%d, m1=%d, m2=%d, m3=%d,\n\m4=%d, m5=%d, m6=%d, m7=%d,\n\m8=%d, m9=%d, m10=%d, m11=%d,\n\m12=%d, m13=%d, m14=%d, m15=%d,\n\m16=%d, m17=%d, m18=%d, m19=%d,\n\m20=%d, m21=%d, m22=%d, m23=%d,\n\m24=%d, m25=%d, m26=%d, m27=%d,\n\m28=%d, m29=%d, m30=%d, m31=%d,\n",
 	          cpu.DM.memory[0], cpu.DM.memory[1], cpu.DM.memory[2], cpu.DM.memory[3], cpu.DM.memory[4], 
 			  cpu.DM.memory[5], cpu.DM.memory[6], cpu.DM.memory[7], cpu.DM.memory[8], cpu.DM.memory[9], 
 			  cpu.DM.memory[10],cpu.DM.memory[11], cpu.DM.memory[12], cpu.DM.memory[13], cpu.DM.memory[14],
