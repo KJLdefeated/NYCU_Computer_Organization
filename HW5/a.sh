@@ -1,0 +1,1 @@
+iverilog -o Pipeline_CPU TestBench.v ALU.v Shifter.v Adder.v Simple_Single_CPU.v ALU_Ctrl.v Decoder.v Instr_Memory.v Mux2to1.v Mux3to1.v Program_Counter.v Reg_File.v Sign_Extend.v Zero_Filled.v Data_Memory.v Pipeline_reg.v
