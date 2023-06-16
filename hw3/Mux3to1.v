@@ -11,5 +11,5 @@ output wire	[size-1:0] data_o;
 
 //Main function
 /*your code here*/
-
+assign data_o = select_i[1] ? data2_i : select_i[0] ? data1_i : data0_i;
 endmodule      

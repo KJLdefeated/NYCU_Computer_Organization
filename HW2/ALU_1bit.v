@@ -15,8 +15,6 @@ module ALU_1bit( result, carryOut, a, b, invertA, invertB, operation, carryIn, l
   wire temp_a, temp_b;
   wire or_temp, and_temp;
   wire temp1, temp2, sum;
-  reg temp;
-  assign result=temp;
 
   /*Operations*/
   xor a_invert(temp_a, invertA, a);
@@ -30,14 +28,10 @@ module ALU_1bit( result, carryOut, a, b, invertA, invertB, operation, carryIn, l
   and cout_step1(temp2, temp1, carryIn);
   or carryout(carryOut, temp2, and_temp);
 
-  always @(*) begin
-    case(operation)
-    2'b00:temp = or_temp;
-    2'b01:temp = and_temp;
-    2'b10:temp = sum;
-    2'b11:temp = less;
-    endcase
-  end
+  assign result = (operation == 2'b00) ? or_temp :
+                (operation == 2'b01) ? and_temp :
+                (operation == 2'b10) ? sum :
+                less;
   
   
 endmodule

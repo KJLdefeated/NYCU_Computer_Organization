@@ -13,6 +13,12 @@ wire		[2-1:0] FURslt_o;
 
 //Main function
 /*your code here*/
-
-
+assign ALU_operation_o =(ALUOp_i[1] == 1 && funct_i[5:0] == 6'b010010) ? 4'b0010 : //add 
+						(ALUOp_i[1] == 1 && funct_i[5:0] == 6'b010000) ? 4'b0110 : //sub
+						(ALUOp_i[1] == 1 && funct_i[5:0] == 6'b010100) ? 4'b0000 : //and
+        				(ALUOp_i[1] == 1 && funct_i[5:0] == 6'b010110) ? 4'b0001 : //or
+						(ALUOp_i[1] == 1 && funct_i[5:0] == 6'b010101) ? 4'b1100 : //nor
+						(ALUOp_i[1] == 1 && funct_i[5:0] == 6'b100000) ? 4'b0111 : //slt
+						4'b0010; //addi, sll, srl
+assign FURslt_o =  	(ALUOp_i == 3'b010 && (funct_i == 6'b000000 || funct_i == 6'b000010)) ? 2'b01 : 2'b00 ;
 endmodule     
